@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public Transform orientation;
+
     float horizontalInput;
     float verticalInput;
 
@@ -23,12 +24,14 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    private void update() {
-        MyInput();
+    private void update() 
+    {
+        //MyInput();
     }
     // Update is called once per frame
 
     private void FixedUpdate(){
+        MyInput();
         MovePlayer();
     }
     
@@ -36,10 +39,17 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalInput =Input.GetAxisRaw("Horizontal");
         verticalInput =Input.GetAxisRaw("Vertical");
+
+        Debug.LogWarning("H-Inp: "+horizontalInput);
+        Debug.LogWarning("V-Inp: "+verticalInput);
+
+                
     }
 
     private void MovePlayer() {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
         rb.AddForce(moveDirection.normalized*moveSpeed*10f, ForceMode.Force);
+        Debug.LogWarning("Force: "+(moveDirection.normalized*moveSpeed*10f, ForceMode.Force));
+        Debug.LogWarning("Move Dir: "+moveDirection);
     }
 }

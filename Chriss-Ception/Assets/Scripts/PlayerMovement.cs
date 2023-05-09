@@ -6,6 +6,20 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float groundDrag;
+
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump = true;
+
+    [Header("Keybinds")]
+    public KeyCode jumpKey = KeyCode.Space;
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask whatIsGround;
+    public bool grounded;
+
     public Transform orientation;
 
     float horizontalInput;
@@ -24,32 +38,78 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
     }
 
-    private void update() 
+    private void Update()
     {
-        //MyInput();
+        MyInput();
+        SpeedControl();
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
+
+
+        if (grounded)
+            rb.drag = groundDrag;
+        else
+            rb.drag = 0;
     }
     // Update is called once per frame
 
-    private void FixedUpdate(){
-        MyInput();
+    private void FixedUpdate()
+    {
+        //MyInput();
         MovePlayer();
     }
-    
+
     private void MyInput()
     {
-        horizontalInput =Input.GetAxisRaw("Horizontal");
-        verticalInput =Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
-        Debug.LogWarning("H-Inp: "+horizontalInput);
-        Debug.LogWarning("V-Inp: "+verticalInput);
+        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        {
+            readyToJump = false;
+            Jump();
+            Invoke(nameof(ResetJump), jumpCooldown);
+        }
+        //Debug.LogWarning("H-Inp: "+horizontalInput);
+        //Debug.LogWarning("V-Inp: "+verticalInput);
 
-                
+
     }
 
-    private void MovePlayer() {
+    private void MovePlayer()
+    {
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        rb.AddForce(moveDirection.normalized*moveSpeed*10f, ForceMode.Force);
-        Debug.LogWarning("Force: "+(moveDirection.normalized*moveSpeed*10f, ForceMode.Force));
-        Debug.LogWarning("Move Dir: "+moveDirection);
+
+        if (grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        else if (!grounded)
+            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+        //Debug.LogWarning("Force: "+(moveDirection.normalized*moveSpeed*10f, ForceMode.Force));
+        //Debug.LogWarning("Move Dir: "+moveDirection);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > moveSpeed)
+        {
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+
+
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void ResetJump()
+    {
+        readyToJump = true;
     }
 }

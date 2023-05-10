@@ -152,13 +152,13 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   skyIntensityMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   exposure:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   multiplier:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -176,8 +176,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   includeSunInBaking:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   type:
     m_OverrideState: 1
     m_Value: 0
@@ -185,8 +185,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   seaLevel:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 49.73
   planetaryRadius:
     m_OverrideState: 0
     m_Value: 6378100
@@ -221,7 +221,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   numberOfBounces:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 3
   groundTint:
     m_OverrideState: 0

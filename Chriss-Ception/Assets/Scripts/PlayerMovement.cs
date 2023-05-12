@@ -26,9 +26,16 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    public bool grounded;
+    bool grounded;
+    bool touchedGround=false;
 
-    public bool touchedGround=false;
+    [Header("Combat")]
+    public float attack1Cooldown;
+    public float attack2Cooldown;
+    bool canAttack = true;
+    float health = 100;
+
+
     public Transform orientation;
 
     float horizontalInput;
@@ -92,6 +99,20 @@ public class PlayerMovement : MonoBehaviour
             Jump();
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
+        if (Input.GetMouseButtonDown(0) && canAttack)
+        {
+            canAttack = false;
+            Attack1();
+            Invoke(nameof(ResetAttack), attack1Cooldown);
+        }
+
+        if (Input.GetMouseButtonDown(1) && canAttack)
+        {
+            canAttack = false;
+            Attack2();
+            Invoke(nameof(ResetAttack), attack2Cooldown);
+        }
         //Debug.LogWarning("H-Inp: "+horizontalInput);
         //Debug.LogWarning("V-Inp: "+verticalInput);
 
@@ -148,13 +169,19 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-        private void Dash(float x_move,float y_move) //x is sideways, y is forward
+    private void Dash(float x_move,float y_move) //x is sideways, y is forward
     {   
+        
         moveDirection = orientation.forward * y_move + orientation.right * x_move;
         
+        rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+
         rb.AddForce(moveDirection.normalized * dashForce * 10f, ForceMode.Impulse);
 
-  
+        if (x_move==0 && y_move==0){
+            readyToDash = true;
+            touchedGround = true;
+        }
     }
 
 
@@ -166,4 +193,22 @@ public class PlayerMovement : MonoBehaviour
     {
         readyToDash = true;
     }
+
+    private void ResetAttack(){
+        canAttack=true;
+    }
+    private void Attack1() 
+    {   
+        //Needs animation
+        Debug.Log("light attack");
+    }
+
+    private void Attack2() 
+    {   
+        //Needs animation
+        Debug.Log("heavy attack");
+    }
+
+
+    
 }

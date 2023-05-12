@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 12514.531, g: 9995.023, b: 8775.898, a: 1}
+  m_IndirectSpecularColor: {r: 12514.488, g: 9987.66, b: 8759.055, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -933,8 +933,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: airDrag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: dashForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: moveSpeed
@@ -943,6 +951,14 @@ PrefabInstance:
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: groundDrag
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: dashCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: gravityScale
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: jumpCooldown

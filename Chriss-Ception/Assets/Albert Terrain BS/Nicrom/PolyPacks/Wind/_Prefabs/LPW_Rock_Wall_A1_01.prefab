@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7635158358508585214}
   - component: {fileID: 3385046679526786100}
   - component: {fileID: 5841253086608827034}
+  - component: {fileID: 6252123761538899669}
+  - component: {fileID: 5453783858941048203}
   m_Layer: 0
   m_Name: LPW_Rock_Wall_A1_01
   m_TagString: Untagged
@@ -138,3 +140,31 @@ TerrainCollider:
   m_Enabled: 1
   m_TerrainData: {fileID: 15600000, guid: aabf1845adeeeae47ac2956eaf9a053a, type: 2}
   m_EnableTreeColliders: 1
+--- !u!136 &6252123761538899669
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3133429536943949068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.9907002
+  m_Height: 5.098828
+  m_Direction: 1
+  m_Center: {x: -1.6905754, y: 2.5080216, z: -0.09403038}
+--- !u!136 &5453783858941048203
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3133429536943949068}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.2145567
+  m_Height: 5.0262136
+  m_Direction: 1
+  m_Center: {x: 1.9868935, y: 1.9999957, z: -0.29855013}

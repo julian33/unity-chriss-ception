@@ -32,8 +32,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Combat")]
     public float attack1Cooldown;
     public float attack2Cooldown;
+    public float maxHealth;
     bool canAttack = true;
     float health = 100;
+    
 
 
     public Transform orientation;

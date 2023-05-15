@@ -32,7 +32,6 @@ Transform:
   m_Children:
   - {fileID: 8212017075753480261}
   - {fileID: 8212017075037499624}
-  - {fileID: 8212017075169446266}
   m_Father: {fileID: 8212017074012420126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -66,15 +65,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   groundDrag: 1
+  airDrag: 0
+  gravityScale: 0
   jumpForce: 7
   jumpCooldown: 1
+  dashForce: 0
+  dashCooldown: 0
   airMultiplier: 0.3
   jumpKey: 32
+  dashKey: 304
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  grounded: 0
+  attack1Cooldown: 0
+  attack2Cooldown: 0
+  maxHealth: 0
   orientation: {fileID: 8212017075037499624}
 --- !u!1 &8212017074012420121
 GameObject:
@@ -362,7 +368,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8212017075169446266}
   m_Father: {fileID: 8212017073896836886}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -389,13 +396,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8212017075169446245}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.79, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.78999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8212017073896836886}
-  m_RootOrder: 2
+  m_Father: {fileID: 8212017075037499624}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8212017075319565358
 GameObject:

@@ -66,15 +66,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   groundDrag: 1
+  airDrag: 0
+  gravityScale: 0
   jumpForce: 7
   jumpCooldown: 1
+  dashForce: 0
+  dashCooldown: 0
   airMultiplier: 0.3
   jumpKey: 32
+  dashKey: 304
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
-  grounded: 0
+  attack1Cooldown: 0
+  attack2Cooldown: 0
+  maxHealth: 0
   orientation: {fileID: 8212017075037499624}
 --- !u!1 &8212017074012420121
 GameObject:

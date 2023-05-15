@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 12514.488, g: 9987.66, b: 8759.055, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 12514.451, g: 9994.113, b: 8773.078, a: 1}
+>>>>>>> 4826d91e636527ce3ec6883e2ccdc6c6a74fc2ea
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -954,7 +958,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: dashCooldown
+<<<<<<< HEAD
       value: 1
+=======
+      value: 0.7
+>>>>>>> 4826d91e636527ce3ec6883e2ccdc6c6a74fc2ea
       objectReference: {fileID: 0}
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: gravityScale
@@ -967,6 +975,14 @@ PrefabInstance:
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: airMultiplier
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: attack1Cooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
+      propertyPath: attack2Cooldown
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8212017073896836885, guid: be9a24a3ea41d2d4ba3eb3d90e6cb3b1, type: 3}
       propertyPath: whatIsGround.m_Bits

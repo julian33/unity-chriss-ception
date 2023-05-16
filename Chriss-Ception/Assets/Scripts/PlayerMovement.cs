@@ -33,8 +33,9 @@ public class PlayerMovement : MonoBehaviour
     public float attack1Cooldown;
     public float attack2Cooldown;
     public float maxHealth;
+    public Transform swordOrientation;
     bool canAttack = true;
-    float health = 100;
+    float health;
     
 
 
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        health = maxHealth;
     }
 
     private void Update()
@@ -198,17 +200,32 @@ public class PlayerMovement : MonoBehaviour
 
     private void ResetAttack(){
         canAttack=true;
+        Vector3 attackRotation = new Vector3(-90f,0f,0f);
+        swordOrientation.Rotate(attackRotation,Space.Self);
     }
     private void Attack1() 
     {   
         //Needs animation
         Debug.Log("light attack");
+        //Transform rot =swordOrientation.
+        Vector3 attackRotation = new Vector3(90f,0f,0f);
+        swordOrientation.Rotate(attackRotation,Space.Self);
     }
 
     private void Attack2() 
     {   
         //Needs animation
+        Debug.Log("preparing attack");
+        Vector3 attackRotation = new Vector3(-45f,0f,0f);
+        swordOrientation.Rotate(attackRotation,Space.Self);
+        Invoke(nameof(Attack2P2), 1.5f);
+    }
+
+    private void Attack2P2() {
         Debug.Log("heavy attack");
+
+        Vector3 attackRotation = new Vector3(135f,0f,0f);
+        swordOrientation.Rotate(attackRotation,Space.Self);
     }
 
 

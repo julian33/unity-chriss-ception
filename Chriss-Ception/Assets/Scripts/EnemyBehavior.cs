@@ -9,7 +9,7 @@ public class EnemyBehavior : MonoBehaviour
 
 	public Transform player;
 
-	public LayerMask whatIsGround, whatIsPlayer;
+	public LayerMask whatIsGround, whatIsPlayer; 
 
 	//Patroling
 	public Vector3 walkPoint;
@@ -79,10 +79,11 @@ public class EnemyBehavior : MonoBehaviour
 		if (!alreadyAttacked)
 		{
 			alreadyAttacked = true;
-			invoke(nameof(ResetAttack), timeBetweenAttacks);
+			Invoke(nameof(ResetAttack), timeBetweenAttacks);
 		}
+	}
 	private void ResetAttack()
-		{
-			alreadyAttacked = false;
-		}
+	{
+		alreadyAttacked = false;
+	}
 }

@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3095224936970292271}
   - component: {fileID: 3278281686201111946}
+  - component: {fileID: -2694319316501303606}
   - component: {fileID: 605994011294704716}
   m_Layer: 0
   m_Name: Chriss-character-Chrissception (1)
@@ -284,6 +285,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2694319316501303606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2431840456745408149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31b50179efcca847928f9da35c15279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 605994011294704716}
+  player: {fileID: 1312031978902583887, guid: a62bfee89dc81c147ba43e9472e6de5f, type: 3}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1024
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 512
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 5
+  timeBetweenAttacks: 0.5
+  sightRange: 20
+  attackRange: 12
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!195 &605994011294704716
 NavMeshAgent:
   m_ObjectHideFlags: 0
